@@ -1,0 +1,124 @@
+/* ============================================
+   2MADE — Contact Page Styles
+   ============================================ */
+
+.contact-page {
+  background: var(--color-black);
+}
+
+/* Contact Hero */
+.contact-hero {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 120px 8% 60px;
+}
+
+.contact-title {
+  font-family: var(--font-serif);
+  font-size: clamp(3rem, 8vw, 7rem);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+}
+
+.contact-subtitle {
+  font-size: 1.2rem;
+  color: var(--color-gray-5);
+  max-width: 600px;
+}
+
+/* Contact Grid */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 60px 8% 160px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Contact Card */
+.contact-card {
+  position: relative;
+  background: rgba(20, 20, 20, 0.6);
+  border-radius: 20px;
+  padding: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  overflow: hidden;
+}
+
+.contact-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+  transition: left 0.5s ease;
+}
+
+.contact-card:hover::before {
+  left: 100%;
+}
+
+.contact-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.contact-card-icon {
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+.contact-card h3 {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  margin-top: auto;
+}
+
+.contact-card p {
+  color: var(--color-gray-5);
+  font-size: 1rem;
+}
+
+.contact-card-arrow {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  font-size: 1.5rem;
+  color: var(--color-gray-5);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.contact-card:hover .contact-card-arrow {
+  transform: translateX(6px);
+  color: var(--color-white);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-hero {
+    min-height: 50vh;
+    padding-top: 80px;
+  }
+  .contact-grid {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
