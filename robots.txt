@@ -1,0 +1,9 @@
+# MADE 2 - Robots
+User-agent: *
+Allow: /
+Disallow: /css/
+Disallow: /js/
+Disallow: /assets/
+Disallow: /.htaccess
+
+Sitemap: https://www.2made.com/sitemap.xml

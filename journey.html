@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle">Our Journey — MADE 2</title>
+    <meta name="description" content="The story of MADE 2 — from zero clients to 1 million EGP.">
+    <meta property="og:title" content="Our Journey — MADE 2">
+    <meta property="og:description" content="From zero to 1 million EGP. Watch the story.">
+    <meta property="og:image" content="assets/hero.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=Cairo:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/journey.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body class="journey-page" oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
+    <div class="scroll-progress" id="scrollProgress"></div>
+    <div class="preloader" id="preloader">
+        <div class="preloader-content">
+            <span class="preloader-logo">         JOURNEY</span>
+            <div class="preloader-bar"><div class="preloader-bar-fill"></div></div>
+            <span class="preloader-percent">0%</span>
+        </div>
+    </div>
+
+    <nav class="nav-liquid">
+        <a href="index.html" class="nav-logo">MADE 2</a>
+        <div class="nav-actions">
+            <a href="journey.html" class="nav-contact-btn" data-en="Our Story" data-ar="قصتنا">قصتنا</a>
+            <a href="contact.html" class="nav-contact-btn" data-en="Contact Us" data-ar="تواصل معنا">تواصل معنا</a>
+            <button class="nav-lang-btn" id="langToggle">EN</button>
+        </div>
+    </nav>
+
+    <button class="fab" id="fab"><span data-en="MENU" data-ar="القائمة">القائمة</span></button>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-inner">
+            <a href="index.html" class="mobile-menu-item" data-en="HOME" data-ar="الرئيسية">الرئيسية</a>
+            <a href="journey.html" class="mobile-menu-item" data-en="OUR STORY" data-ar="قصتنا">قصتنا</a>
+            <a href="contact.html" class="mobile-menu-item" data-en="CONTACT" data-ar="تواصل معنا">تواصل معنا</a>
+        </div>
+    </div>
+
+    <section class="journey-hero">
+        <h1 class="journey-title" data-en="The Journey to 1 Million" data-ar="الرحلة إلى مليون">الرحلة إلى مليون</h1>
+        <p class="journey-subtitle" data-en="Two creators. Zero capital. One wild story." data-ar="مبدعان. صفر رأس مال. قصة مجنونة.">مبدعان. صفر رأس مال. قصة مجنونة.</p>
+    </section>
+
+    <section class="journey-timeline">
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <span class="timeline-date" data-en="THE BEGINNING" data-ar="البداية">البداية</span>
+                <h2 data-en="The Idea" data-ar="الفكرة">الفكرة</h2>
+                <p data-en="Two friends, one computer, and a shared dream to build something meaningful." data-ar="صديقان، جهاز واحد، وحلم مشترك لبناء شيء ذي معنى.">صديقان، جهاز واحد، وحلم مشترك لبناء شيء ذي معنى.</p>
+            </div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <span class="timeline-date" data-en="THE STRUGGLE" data-ar="النضال">النضال</span>
+                <h2 data-en="Zero Clients" data-ar="صفر عملاء">صفر عملاء</h2>
+                <p data-en="We learned, we built, we failed, and we started again. No one believed in us." data-ar="تعلمنا، وبنينا، وفشلنا، وبدأنا من جديد. لا أحد آمن بنا.">تعلمنا، وبنينا، وفشلنا، وبدأنا من جديد. لا أحد آمن بنا.</p>
+            </div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <span class="timeline-date" data-en="THE GOAL" data-ar="الهدف">الهدف</span>
+                <h2 data-en="1 Million EGP" data-ar="مليون جنيه">مليون جنيه</h2>
+                <p data-en="One goal, one vision. We promised ourselves we'd reach it." data-ar="هدف واحد، رؤية واحدة. وعدنا أنفسنا أننا سنحققه.">هدف واحد، رؤية واحدة. وعدنا أنفسنا أننا سنحققه.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-logo">MADE 2</div>
+        <p data-en="Two minds. One vision." data-ar="عقلان. رؤية واحدة.">عقلان. رؤية واحدة.</p>
+        <div class="footer-links">
+            <a href="index.html" data-en="Index" data-ar="الرئيسية">الرئيسية</a>
+            <a href="contact.html" data-en="Contact" data-ar="تواصل معنا">تواصل معنا</a>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/journey.js"></script>
+</body>
+</html>

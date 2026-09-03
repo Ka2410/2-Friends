@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle">MADE 2 — Two People.</title>
+    
+    <!-- Meta Description & SEO -->
+    <meta name="description" content="MADE 2 — Two creators. One vision. Watch the story of building a creative studio from zero to 1 million EGP.">
+    <meta name="keywords" content="MADE 2, creative studio, visual language, editorial design, development, journey">
+    <meta name="author" content="MADE 2">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="MADE 2 — Two Creators. One Vision.">
+    <meta property="og:description" content="Two creators. One visual language. Watch our journey.">
+    <meta property="og:image" content="assets/hero.jpg">
+    <meta property="og:url" content="https://www.2made.com/">
+    <meta property="og:site_name" content="MADE 2">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="ar_EG">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MADE 2 — Two Creators. One Vision.">
+    <meta name="twitter:description" content="Two creators. One visual language. Watch our journey.">
+    <meta name="twitter:image" content="assets/hero.jpg">
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "MADE 2",
+      "description": "Two creators. One visual language.",
+      "url": "https://www.2made.com/",
+      "publisher": {
+        "@type": "Organization",
+        "name": "MADE 2"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Mohamed",
+      "jobTitle": "Content Creator / Visual Artist",
+      "url": "https://www.2made.com/person-1.html",
+      "image": "https://www.2made.com/assets/creator-01.jpg"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Karam",
+      "jobTitle": "Full Stack Developer / Software Engineer",
+      "url": "https://www.2made.com/person-2.html",
+      "image": "https://www.2made.com/assets/creator-02.jpg"
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=Cairo:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-content">
+            <span class="preloader-logo">MADE 2</span>
+            <div class="preloader-bar"><div class="preloader-bar-fill"></div></div>
+            <span class="preloader-percent">0%</span>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav-liquid">
+        <a href="index.html" class="nav-logo">MADE 2</a>
+        <div class="nav-actions">
+            <a href="journey.html" class="nav-contact-btn" data-en="Our Story" data-ar="قصتنا">قصتنا</a>
+            <a href="contact.html" class="nav-contact-btn" data-en="Contact Us" data-ar="تواصل معنا">تواصل معنا</a>
+            <button class="nav-lang-btn" id="langToggle">EN</button>
+        </div>
+    </nav>
+
+    <!-- Floating Menu (FAB) -->
+    <button class="fab" id="fab"><span data-en="MENU" data-ar="القائمة">القائمة</span></button>
+
+    <!-- Fullscreen Glass Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-inner">
+            <a href="#hero" class="mobile-menu-item" data-en="HOME" data-ar="الرئيسية">الرئيسية</a>
+            
+            <a href="#creators" class="mobile-menu-item" data-en="CREATORS" data-ar="المبدعون">المبدعون</a>
+            <a href="#about" class="mobile-menu-item" data-en="ABOUT" data-ar="من نحن">من نحن</a>
+            <a href="journey.html" class="mobile-menu-item" data-en="OUR STORY" data-ar="قصتنا">قصتنا</a>
+            <a href="contact.html" class="mobile-menu-item" data-en="CONTACT" data-ar="تواصل معنا">تواصل معنا</a>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero" id="hero">
+        <div class="hero-image" id="heroImage">
+            <div class="hero-layer hero-base-layer" id="heroBase">
+                <img src="assets/hero.jpg" alt="Two creators sitting at a table" loading="lazy">
+            </div>
+            <div class="hero-layer hero-bg-layer" id="heroBgLayer">
+                <img src="assets/hero-bg.jpg" alt="White background" loading="lazy">
+            </div>
+            <div class="hero-layer hero-mohamed-layer" id="heroMohamedLayer">
+                <img src="assets/mohamed-alone.jpg" alt="Mohamed portrait" loading="lazy">
+            </div>
+            <div class="hero-layer hero-karam-layer" id="heroKaramLayer">
+                <img src="assets/karam-alone.jpg" alt="Karam portrait" loading="lazy">
+            </div>
+        </div>
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-arc-menu hero-arc-menu-left" id="arcMenuLeft">
+            <a href="#" class="arc-menu-item about-trigger" data-target="left">
+                <span class="arc-menu-text" data-en="About Me" data-ar="من أنا">من أنا</span>
+            </a>
+            <a href="person-1.html" class="arc-menu-item">
+                <span class="arc-menu-text" data-en="My Page" data-ar="شاهد صفحتي">شاهد صفحتي</span>
+            </a>
+            <a href="https://wa.me/201026958938?text=We%20want%20to%20work%20with%20you" target="_blank" rel="noopener noreferrer" class="arc-menu-item">
+                <span class="arc-menu-text" data-en="WhatsApp" data-ar="تواصل واتساب">تواصل واتساب</span>
+            </a>
+            <div class="about-popover about-popover-left" id="popoverLeft">
+                <p data-en="I'm Mohamed. I love monochrome style and the details that make a difference. I work on visual identities that tell a story." data-ar="أنا محمد. بحب الستايل الأحادي اللون، والتفاصيل اللي بتفرق. بشتغل على هويات بصرية تحكي قصة.">أنا محمد. بحب الستايل الأحادي اللون، والتفاصيل اللي بتفرق. بشتغل على هويات بصرية تحكي قصة.</p>
+                <span class="about-popover-arrow"></span>
+            </div>
+        </div>
+
+        <div class="hero-arc-menu hero-arc-menu-right" id="arcMenuRight">
+            <a href="#" class="arc-menu-item about-trigger" data-target="right">
+                <span class="arc-menu-text" data-en="About Me" data-ar="من أنا">من أنا</span>
+            </a>
+            <a href="person-2.html" class="arc-menu-item">
+                <span class="arc-menu-text" data-en="My Page" data-ar="شاهد صفحتي">شاهد صفحتي</span>
+            </a>
+            <a href="https://wa.me/201211659075?text=We%20want%20to%20work%20with%20you" target="_blank" rel="noopener noreferrer" class="arc-menu-item">
+                <span class="arc-menu-text" data-en="WhatsApp" data-ar="تواصل واتساب">تواصل واتساب</span>
+            </a>
+            <div class="about-popover about-popover-right" id="popoverRight">
+                <p data-en="I'm Karam. I engineer websites that live. I love black and white, and code that speaks in a quiet voice." data-ar="أنا كرم. بهندس مواقع بتعيش. بحب الأسود والأبيض، والكود اللي بيتكلم بصوت هادي.">أنا كرم. بهندس مواقع بتعيش. بحب الأسود والأبيض، والكود اللي بيتكلم بصوت هادي.</p>
+                <span class="about-popover-arrow"></span>
+            </div>
+        </div>
+
+        <div class="hero-cta hero-cta-left">
+            <a href="person-1.html" class="cta-glass" data-magnetic data-side="left" data-menu-target="left"><span data-en="Explore" data-ar="استكشف">استكشف</span></a>
+        </div>
+        <div class="hero-cta hero-cta-right">
+            <a href="person-2.html" class="cta-glass" data-magnetic data-side="right" data-menu-target="right"><span data-en="Explore" data-ar="استكشف">استكشف</span></a>
+        </div>
+
+        <div class="hero-scroll-hint">
+            <span data-en="Scroll" data-ar="مرر">مرر</span>
+            <span class="hero-scroll-line"></span>
+        </div>
+    </section>
+
+    <!-- 01 Intro -->
+    <section class="intro-section" id="intro">
+        <div class="intro-content">
+            <h2 class="intro-title">
+                <span class="intro-line-1" data-en="Two Creators." data-ar="مبدعان.">مبدعان.</span>
+                <span class="intro-line-2" data-en="One Vision." data-ar="رؤية واحدة.">رؤية واحدة.</span>
+            </h2>
+            <p class="intro-sub" data-en="A developer & a creator crafting cinematic digital experiences." data-ar="مطور ومبدع يصنعون تجارب رقمية سينمائية.">مطور ومبدع يصنعون تجارب رقمية سينمائية.</p>
+        </div>
+        <div class="marquee">
+            <div class="marquee-track">
+                <span>MADE 2</span><span data-en="CREATIVE" data-ar="إبداع">إبداع</span><span>DEVELOPMENT</span><span>BRANDING</span><span>DESIGN</span>
+                <span>MADE 2</span><span data-en="CREATIVE" data-ar="إبداع">إبداع</span><span>DEVELOPMENT</span><span>BRANDING</span><span>DESIGN</span>
+                <span>MADE 2</span><span data-en="CREATIVE" data-ar="إبداع">إبداع</span><span>DEVELOPMENT</span><span>BRANDING</span><span>DESIGN</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 02 Creators -->
+    <section class="creators-section" id="creators">
+        <div class="section-label" data-en="Creators" data-ar="المبدعون">المبدعون</div>
+        <div class="creators-grid">
+            <div class="creator-card creator-card-left">
+                <div class="creator-card-img" style="background:#000;display:flex;align-items:center;justify-content:center;">
+                    <img src="assets/mohamed-logo.jpg" alt="Mohamed logo" style="width:80%;height:80%;object-fit:contain;">
+                </div>
+                <div class="creator-card-info">
+                    <span class="creator-number">01</span>
+                    <h3>Mohamed</h3>
+                    <p class="creator-role" data-en="Content Creator / Visual Artist" data-ar="صانع محتوى / فنان بصري">صانع محتوى / فنان بصري</p>
+                    <p class="creator-desc" data-en="Crafting bold visual identities and cinematic compositions." data-ar="صياغة هويات بصرية جريئة وتكوينات سينمائية.">صياغة هويات بصرية جريئة وتكوينات سينمائية.</p>
+                    <a href="person-1.html" class="creator-link" data-en="View Portfolio →" data-ar="عرض الأعمال →">عرض الأعمال →</a>
+                </div>
+            </div>
+            <div class="creator-card creator-card-right">
+                <div class="creator-card-img" style="background:#000;display:flex;align-items:center;justify-content:center;">
+                    <img src="assets/karam-logo.jpg" alt="Karam logo" style="width:80%;height:80%;object-fit:contain;">
+                </div>
+                <div class="creator-card-info">
+                    <span class="creator-number">02</span>
+                    <h3>Karam</h3>
+                    <p class="creator-role" data-en="Full Stack Developer/ Software Engineer" data-ar="مطور Full Stack / مهندس برمجيات">مطور Full Stack / مهندس برمجيات</p>
+                    <p class="creator-desc" data-en="building modern web apps, and turning ideas into reality." data-ar="بناء تطبيقات ويب حديثة، وتحويل الأفكار إلى واقع.">بناء تطبيقات ويب حديثة، وتحويل الأفكار إلى واقع.</p>
+                    <a href="person-2.html" class="creator-link" data-en="View Portfolio →" data-ar="عرض الأعمال →">عرض الأعمال →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 03 Selected Work -->
+    <section class="work-section" id="work">
+        <div class="section-label" data-en="02 — Selected Work" data-ar="02 — أعمال مختارة">02 — أعمال مختارة</div>
+        <div class="work-wrapper">
+            <div class="work-track">
+                <a href="project-01.html" class="work-card">
+                    <span class="project-index">01</span>
+                    <div class="work-image" style="background:linear-gradient(135deg,#111,#222)"></div>
+                    <div class="work-meta">
+                        <span class="work-title" data-en="Brand Identity" data-ar="هوية بصرية">هوية بصرية</span>
+                        <span class="work-cat" data-en="Project 01" data-ar="مشروع 01">مشروع 01</span>
+                    </div>
+                </a>
+                <a href="project-02.html" class="work-card">
+                    <span class="project-index">02</span>
+                    <div class="work-image" style="background:linear-gradient(135deg,#222,#111)"></div>
+                    <div class="work-meta">
+                        <span class="work-title" data-en="Editorial Design" data-ar="تصميم تحريري">تصميم تحريري</span>
+                        <span class="work-cat" data-en="Project 02" data-ar="مشروع 02">مشروع 02</span>
+                    </div>
+                </a>
+                <a href="project-03.html" class="work-card">
+                    <span class="project-index">03</span>
+                    <div class="work-image" style="background:linear-gradient(135deg,#1a1a1a,#2a2a2a)"></div>
+                    <div class="work-meta">
+                        <span class="work-title" data-en="Campaign" data-ar="حملة">حملة</span>
+                        <span class="work-cat" data-en="Project 03" data-ar="مشروع 03">مشروع 03</span>
+                    </div>
+                </a>
+            </div>
+            <div class="work-end-indicator">
+                <span data-en="End of Selected Work" data-ar="نهاية الأعمال المختارة">نهاية الأعمال المختارة</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 04 About -->
+    <section class="about-section" id="about">
+        <div class="about-bg">2</div>
+        <div class="about-content">
+            <div class="section-label" data-en="03 — About" data-ar="03 — من نحن">03 — من نحن</div>
+            <h2 class="about-headline" data-split-text data-en="We build visual worlds." data-ar="نبني عوالم بصرية.">نبني عوالم بصرية.</h2>
+            <p class="about-text" data-en="Zero clients, zero capital, and one goal: 1 million EGP. Watch the story from behind the scenes." data-ar="صفر عملاء، صفر رأس مال، وهدف واحد: مليون جنيه. شاهد القصة من كواليس الأحداث.">صفر عملاء، صفر رأس مال، وهدف واحد: مليون جنيه. شاهد القصة من كواليس الأحداث.</p>
+        </div>
+    </section>
+
+    <!-- 05 Contact -->
+    <section class="contact-section" id="contact">
+        <div class="section-label" data-en="04 — Contact" data-ar="04 — تواصل معنا">04 — تواصل معنا</div>
+        <h2 class="glitch-heading" data-text="LET'S TALK" data-en="LET'S TALK" data-ar="لنتحدث">لنتحدث</h2>
+        <p data-en="Have a project in mind?" data-ar="لديك مشروع في بالك؟">لديك مشروع في بالك؟</p>
+        <a href="contact.html" class="contact-email" data-en="Say hello to MADE 2" data-ar="قل مرحبًا لـ MADE 2">قل مرحبًا لـ MADE 2</a>
+        <a href="contact.html" class="cta-glass contact-cta" data-magnetic><span data-en="Get in Touch" data-ar="تواصل معنا">تواصل معنا</span></a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-logo">MADE 2</div>
+        <p data-en="Two minds. One vision." data-ar="عقلان. رؤية واحدة.">عقلان. رؤية واحدة.</p>
+        <div class="footer-links">
+            <a href="index.html" data-en="Index" data-ar="الرئيسية">الرئيسية</a>
+            <a href="person-1.html">Mohamed</a>
+            <a href="person-2.html">Karam</a>
+            <a href="journey.html" data-en="Our Story" data-ar="قصتنا">قصتنا</a>
+            <a href="contact.html" data-en="Contact" data-ar="تواصل معنا">تواصل معنا</a>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+</html>

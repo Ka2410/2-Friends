@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle">Project 03 — MADE 2</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Cairo:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/project.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <style>
+        @media (max-width: 768px) { .nav-liquid .nav-links { display: none !important; } }
+        @media (min-width: 769px) { .fab { display: none !important; } }
+    </style>
+</head>
+<body class="project-page" oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
+    <nav class="nav-liquid">
+        <a href="index.html" class="nav-logo">MADE 2</a>
+        <div class="nav-links" style="display:flex;gap:10px;align-items:center;">
+            <a href="index.html" class="nav-contact-btn" data-en="Home" data-ar="الرئيسية">الرئيسية</a>
+            <a href="index.html#creators" class="nav-contact-btn" data-en="Creators" data-ar="المبدعون">المبدعون</a>
+            <a href="index.html#about" class="nav-contact-btn" data-en="About" data-ar="من نحن">من نحن</a>
+            <a href="contact.html" class="nav-contact-btn" data-en="Contact" data-ar="تواصل">تواصل</a>
+        </div>
+        <div class="nav-actions">
+            <button class="nav-lang-btn" id="langToggle">EN</button>
+        </div>
+    </nav>
+
+    <button class="fab" id="fab"><span data-en="MENU" data-ar="القائمة">القائمة</span></button>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-inner">
+            <a href="index.html" class="mobile-menu-item" data-en="HOME" data-ar="الرئيسية">الرئيسية</a>
+            <a href="index.html#creators" class="mobile-menu-item" data-en="CREATORS" data-ar="المبدعون">المبدعون</a>
+            <a href="index.html#about" class="mobile-menu-item" data-en="ABOUT" data-ar="من نحن">من نحن</a>
+            <a href="contact.html" class="mobile-menu-item" data-en="CONTACT" data-ar="تواصل">تواصل</a>
+        </div>
+    </div>
+
+    <section class="project-header">
+        <div class="project-category" data-en="Campaign" data-ar="حملة">حملة</div>
+        <h1 class="project-title" data-en="Silent Narratives" data-ar="روايات صامتة">روايات صامتة</h1>
+        <div class="project-meta">
+            <span data-en="Year: 2026" data-ar="سنة: 2026">سنة: 2026</span>
+            <span data-en="Creator: Mohamed, Karam" data-ar="المبدع: محمد، كرم">المبدع: محمد، كرم</span>
+            <span data-en="Role: Creative Direction" data-ar="الدور: إدارة إبداعية">الدور: إدارة إبداعية</span>
+        </div>
+    </section>
+
+    <section class="project-hero-image">
+        <div class="project-hero-img" style="background:linear-gradient(135deg,#1a1a1a,#2a2a2a)"></div>
+    </section>
+
+    <section class="project-description">
+        <p data-en="A campaign that communicates strength through subtlety. Monochromatic visuals, dramatic lighting, and a powerful message of restraint and elegance." data-ar="حملة توصل القوة من خلال البساطة. صور أحادية اللون، إضاءة درامية، ورسالة قوية من ضبط النفس والأناقة.">حملة توصل القوة من خلال البساطة. صور أحادية اللون، إضاءة درامية، ورسالة قوية من ضبط النفس والأناقة.</p>
+    </section>
+
+    <section class="project-image-sequence">
+        <div class="seq-item" style="background:linear-gradient(135deg,#111,#1a1a1a)"></div>
+        <div class="seq-item" style="background:linear-gradient(135deg,#2e2e2e,#111)"></div>
+        <div class="seq-item" style="background:linear-gradient(135deg,#222,#1a1a1a)"></div>
+    </section>
+
+    <section class="project-details">
+        <div class="detail-block">
+            <h4 data-en="Challenge" data-ar="التحدي">التحدي</h4>
+            <p data-en="Create a campaign that resonates without relying on color or noise." data-ar="إنشاء حملة تصل إلى الجمهور دون الاعتماد على الألوان أو الضجيج.">إنشاء حملة تصل إلى الجمهور دون الاعتماد على الألوان أو الضجيج.</p>
+        </div>
+        <div class="detail-block">
+            <h4 data-en="Solution" data-ar="الحل">الحل</h4>
+            <p data-en="We used cinematic composition and dramatic contrast to tell a compelling story." data-ar="استخدمنا التكوين السينمائي والتباين الدرامي لرواية قصة مقنعة.">استخدمنا التكوين السينمائي والتباين الدرامي لرواية قصة مقنعة.</p>
+        </div>
+    </section>
+
+    <div class="project-nav">
+        <a href="project-02.html" class="prev" data-en="← Previous" data-ar="← السابق">← السابق</a>
+        <a href="project-04.html" class="next" data-en="Next →" data-ar="التالي →">التالي →</a>
+    </div>
+
+    <footer class="site-footer">
+        <p>MADE 2 — Two People. One Goal.</p>
+        <a href="index.html" data-en="Home" data-ar="الرئيسية">الرئيسية</a>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/project.js"></script>
+</body>
+</html>

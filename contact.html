@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle">Contact — MADE 2</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Cairo:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body class="contact-page" oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
+    <div class="scroll-progress" id="scrollProgress"></div>
+    <div class="preloader" id="preloader">
+        <div class="preloader-content">
+            <span class="preloader-logo">CONTACT</span>
+            <div class="preloader-bar"><div class="preloader-bar-fill"></div></div>
+            <span class="preloader-percent">0%</span>
+        </div>
+    </div>
+
+    <nav class="nav-liquid">
+        <a href="index.html" class="nav-logo">MADE 2</a>
+        <div class="nav-actions">
+            <a href="contact.html" class="nav-contact-btn" data-en="Contact Us" data-ar="تواصل معنا">تواصل معنا</a>
+            <button class="nav-lang-btn" id="langToggle">EN</button>
+        </div>
+    </nav>
+
+    <button class="fab" id="fab"><span data-en="MENU" data-ar="القائمة">القائمة</span></button>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-inner">
+            <a href="index.html" class="mobile-menu-item" data-en="HOME" data-ar="الرئيسية">الرئيسية</a>
+            <a href="index.html#work" class="mobile-menu-item" data-en="WORK" data-ar="الأعمال">الأعمال</a>
+            <a href="index.html#creators" class="mobile-menu-item" data-en="CREATORS" data-ar="المبدعون">المبدعون</a>
+            <a href="index.html#about" class="mobile-menu-item" data-en="ABOUT" data-ar="من نحن">من نحن</a>
+            <a href="contact.html" class="mobile-menu-item" data-en="CONTACT" data-ar="تواصل معنا">تواصل معنا</a>
+        </div>
+    </div>
+
+    <section class="contact-hero">
+        <h1 class="contact-title" data-en="LET'S CONNECT" data-ar="لنتواصل">لنتواصل</h1>
+        <p class="contact-subtitle" data-en="We'd love to hear from you. Choose a platform below." data-ar="يسعدنا سماعك. اختر منصة من الأسفل.">يسعدنا سماعك. اختر منصة من الأسفل.</p>
+    </section>
+
+    <section class="contact-grid">
+        <a href="https://instagram.com/2___made" target="_blank" rel="noopener noreferrer" class="contact-card">
+            <div class="contact-card-icon">📷</div>
+            <h3 data-en="Instagram" data-ar="انستغرام">انستغرام</h3>
+            <p>@2___made</p>
+            <span class="contact-card-arrow">→</span>
+        </a>
+        <a href="https://wa.me/201234567890" target="_blank" rel="noopener noreferrer" class="contact-card">
+            <div class="contact-card-icon">💬</div>
+            <h3 data-en="WhatsApp" data-ar="واتساب">واتساب</h3>
+            <p>+20 123 456 7890</p>
+            <span class="contact-card-arrow">→</span>
+        </a>
+        <a href="https://www.facebook.com/Madetwo/" target="_blank" rel="noopener noreferrer" class="contact-card">
+            <div class="contact-card-icon">ⓕ</div>
+            <h3 data-en="Facebook" data-ar="فيسبوك">فيسبوك</h3>
+            <p>/company/made 2</p>
+            <span class="contact-card-arrow">→</span>
+        </a>
+        <a href="https://tiktok.com/@2___made" target="_blank" rel="noopener noreferrer" class="contact-card">
+            <div class="contact-card-icon">【ꚠ】</div>
+            <h3 data-en="TikTok" data-ar="تيك توك">تيك توك</h3>
+            <p>@2___made</p>
+            <span class="contact-card-arrow">→</span>
+        </a>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-logo">MADE 2</div>
+        <p data-en="Two People. One Goal." data-ar="شخصان. هدف واحد.">شخصان. هدف واحد.</p>
+        <div class="footer-links">
+            <a href="index.html" data-en="Index" data-ar="الرئيسية">الرئيسية</a>
+            <a href="person-1.html">Mohamed</a>
+            <a href="person-2.html">Karam</a>
+            <a href="contact.html" data-en="Contact" data-ar="تواصل معنا">تواصل معنا</a>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+</html>
