@@ -50,6 +50,33 @@ body.loaded {
   opacity: 1;
 }
 
+/* ============================================
+   HIDE SCROLLBAR — Everywhere
+============================================ */
+/* Chrome / Edge / Safari */
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
+}
+
+/* Firefox + كل المتصفحات التانية */
+html {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+/* بعض المتصفحات القديمة */
+* {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+*::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
+}
+
 /* ===== حماية الصور (منع التنزيل والسحب والضغط المطول) ===== */
 img {
   -webkit-user-drag: none;
@@ -58,7 +85,7 @@ img {
   user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
-  -webkit-touch-callout: none; /* 🔴 يمنع قائمة الضغط المطول على iOS */
+  -webkit-touch-callout: none;
 }
 
 img, a {
@@ -70,7 +97,7 @@ a {
   color: inherit;
 }
 
-/* ===== منع نسخ النصوص المهمة (مع منع التحديد على الجوال) ===== */
+/* ===== منع نسخ النصوص المهمة ===== */
 .hero-title,
 .hero .cta-glass span,
 .arc-menu-item,
@@ -93,7 +120,7 @@ a {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  -webkit-touch-callout: none; /* 🔴 يمنع القائمة عند الضغط الطويل على النصوص في iOS */
+  -webkit-touch-callout: none;
 }
 
 /* ===== Scroll Progress Bar ===== */
@@ -444,6 +471,46 @@ a {
   z-index: 1;
 }
 
+/* ===== النص الكبير ===== */
+.hero-title-large {
+  position: absolute;
+  top: 30%;
+  left: 52%;
+  transform: translate(-50%, -50%);
+  font-family: 'Kavoon', serif;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: rgba(0, 0, 0, 0.95);
+  text-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+  z-index: 3;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  text-align: center;
+  line-height: 1.2;
+  max-width: 90vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2em;
+}
+
+.hero-title-large .line-1,
+.hero-title-large .line-2 {
+  display: block;
+}
+
+[dir="rtl"] .hero-title-large,
+[lang="ar"] .hero-title-large {
+  font-family: 'Playpen Sans Arabic', cursive;
+}
+
+body.loaded .hero-title-large {
+  opacity: 1;
+}
+
+/* ===== Rest of the Hero styles ===== */
 .hero-cta {
   position: absolute;
   bottom: 10%;

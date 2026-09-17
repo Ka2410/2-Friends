@@ -8,6 +8,11 @@ function initLenis() {
       smooth: true,
     });
 
+    // مزامنة Lenis مع ScrollTrigger
+    if (typeof ScrollTrigger !== 'undefined') {
+      lenis.on('scroll', ScrollTrigger.update);
+    }
+
     function raf(time) {
       lenis.raf(time);
       requestAnimationFrame(raf);
@@ -76,6 +81,60 @@ function initPreloader() {
   }, 150);
 }
 
+function animateHeroTitleIn() {
+  const line1 = document.querySelector('.hero-title-large .line-1');
+  const line2 = document.querySelector('.hero-title-large .line-2');
+  if (!line1 || !line2) return;
+
+  // إيقاف أي أنيميشن شغال على السطور
+  gsap.killTweensOf([line1, line2]);
+
+  // إعادة تعيين الحالة قبل الأنيميشن
+  gsap.set(line1, { opacity: 0, y: -60 });
+  gsap.set(line2, { opacity: 0, y: 60 });
+
+  // أنيميشن السطر الأول (من فوق)
+  gsap.to(line1, {
+    opacity: 1,
+    y: 0,
+    duration: 1,
+    ease: 'power3.out',
+    delay: 0.2
+  });
+
+  // أنيميشن السطر الثاني (من تحت)
+  gsap.to(line2, {
+    opacity: 1,
+    y: 0,
+    duration: 1,
+    ease: 'power3.out',
+    delay: 0.4
+  });
+}
+
+function initHeroTitleObserver() {
+  const heroSection = document.getElementById('hero');
+  const line1 = document.querySelector('.hero-title-large .line-1');
+  const line2 = document.querySelector('.hero-title-large .line-2');
+  
+  if (!heroSection || !line1 || !line2) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // ظهر الهيرو على الشاشة => شغّل الأنيميشن
+        animateHeroTitleIn();
+      } else {
+        // اختفى الهيرو من الشاشة => أخفي السطور فوراً
+        gsap.killTweensOf([line1, line2]);
+        gsap.set([line1, line2], { opacity: 0 });
+      }
+    });
+  }, { threshold: 0.3 }); // يشتغل لما يظهر 30% من الهيرو
+
+  observer.observe(heroSection);
+}
+
 function initZoomEraseAndMenu() {
   const heroBase = document.getElementById('heroBase');
   const heroBg = document.getElementById('heroBgLayer');
@@ -90,22 +149,40 @@ function initZoomEraseAndMenu() {
 
   if (!heroBase || !heroBg || !heroMohamed || !heroKaram || !heroContainer || !heroSection) return;
 
+  let isBusy = false;
+
   const closeAllMenus = () => {
     arcMenus.forEach(menu => menu.classList.remove('active'));
     heroSection.classList.remove('menu-open');
   };
 
   const resetHero = () => {
+    gsap.killTweensOf([heroBase, heroBg, heroMohamed, heroKaram, heroContainer]);
+
     heroBase.style.opacity = '1';
     heroBg.style.opacity = '0';
     heroMohamed.style.opacity = '0';
     heroKaram.style.opacity = '0';
     gsap.to(heroContainer, { scale: 1, duration: 0.5, ease: 'power2.out' });
     closeAllMenus();
+
+    setTimeout(() => {
+      animateHeroTitleIn();
+    }, 200);
   };
 
   const zoomOnPerson = (side) => {
+    if (isBusy) return;
+
+    isBusy = true;
+
+    gsap.killTweensOf([heroBase, heroBg, heroMohamed, heroKaram, heroContainer]);
+
     closeAllMenus();
+
+    const lines = document.querySelectorAll('.hero-title-large .line-1, .hero-title-large .line-2');
+    gsap.killTweensOf(lines);
+    gsap.set(lines, { opacity: 0 });
 
     const activeLayer = side === 'left' ? heroMohamed : heroKaram;
     const inactiveLayer = side === 'left' ? heroKaram : heroMohamed;
@@ -135,32 +212,32 @@ function initZoomEraseAndMenu() {
         });
       }
     }, 500);
+
+    setTimeout(() => {
+      isBusy = false;
+    }, 2000);
   };
 
   if (ctaLeft) {
     ctaLeft.addEventListener('click', (e) => {
       e.preventDefault();
-      if (ctaLeft.classList.contains('zooming')) return;
-      ctaLeft.classList.add('zooming');
       zoomOnPerson('left');
-      setTimeout(() => ctaLeft.classList.remove('zooming'), 1200);
     });
   }
 
   if (ctaRight) {
     ctaRight.addEventListener('click', (e) => {
       e.preventDefault();
-      if (ctaRight.classList.contains('zooming')) return;
-      ctaRight.classList.add('zooming');
       zoomOnPerson('right');
-      setTimeout(() => ctaRight.classList.remove('zooming'), 1200);
     });
   }
 
   document.addEventListener('click', (e) => {
     if (!e.target.closest('.hero-arc-menu') && !e.target.closest('.hero .cta-glass')) {
-      closeAllMenus();
-      setTimeout(resetHero, 100);
+      if (!isBusy) {
+        closeAllMenus();
+        setTimeout(resetHero, 100);
+      }
     }
   });
 }
@@ -232,18 +309,15 @@ function initTextProtection() {
   });
 }
 
-// 🔴 فحص بيئة WebView / In-App Browser
 function detectWebView() {
   const ua = navigator.userAgent.toLowerCase();
   const isWebView = /(instagram|facebook|whatsapp|snapchat|line|fbav|wv|inappbrowser)/.test(ua);
   
   if (isWebView) {
     console.warn('You are viewing inside an in-app browser. Some features may be limited.');
-    // يمكن إضافة رسالة للمستخدم هنا (اختياري)
   }
 }
 
-// 🔴 تحسين أمان localStorage - استخدام sessionStorage بدلاً من التخزين الدائم إذا لزم الأمر
 const LanguageManager = {
   currentLang: 'en',
 
@@ -304,6 +378,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initPointerGlass();
   initPreloader();
   initZoomEraseAndMenu();
+  initHeroTitleObserver(); // تم استبدال initHeroTitleScrollTrigger بـ initHeroTitleObserver
   initAboutPopovers();
   initScrollProgress();
   initImageProtection();
